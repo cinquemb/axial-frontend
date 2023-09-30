@@ -32,17 +32,17 @@ export function configureAppStore(
     ],
     devTools:
       /* istanbul ignore next line */
-      process.env.NODE_ENV !== "production" ||
-      process.env.PUBLIC_URL.length > 0,
+      import.meta.env.NODE_ENV !== "production" ||
+      import.meta.env.PUBLIC_URL.length > 0,
     enhancers,
   });
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
-  if (module.hot) {
+  /*if (module.hot) {
     module.hot.accept("./reducers", () => {
       forceReducerReload(store);
     });
-  }
+  }*/
   return store;
 }

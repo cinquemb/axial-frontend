@@ -7,9 +7,9 @@ function createApolloClient() {
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
       uri:
-        process.env.ENVIRONMENT === "DEV"
-          ? process.env.DEVAPIADDR
-          : process.env.APIADDR,
+        import.meta.env.ENVIRONMENT === "DEV"
+          ? import.meta.env.DEVAPIADDR
+          : import.meta.env.APIADDR,
     }),
     cache: new InMemoryCache(),
   });

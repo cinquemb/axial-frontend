@@ -32,8 +32,8 @@ export const BlockChain: FC<BlockChainProps> = ({
   mainTokenABI,
 }) => {
   const variables = {
-    MAIN_TOKEN_ADDRESS: process.env.REACT_APP_MAIN_TOKEN_ADDRESS,
-    MAIN_TOKEN_NAME: process.env.REACT_APP_MAIN_TOKEN_NAME,
+    MAIN_TOKEN_ADDRESS: import.meta.env.VITE_MAIN_TOKEN_ADDRESS,
+    MAIN_TOKEN_NAME: import.meta.env.VITE_MAIN_TOKEN_NAME,
   };
 
   for (let key in variables) {

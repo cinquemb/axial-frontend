@@ -1,6 +1,6 @@
 import { SwapStatsReponse } from "../types";
 
-const swapStatsURI = process.env.REACT_APP_ANALYTICS_API ?? "";
+const swapStatsURI = import.meta.env.VITE_ANALYTICS_API ?? "";
 
 export const fetchSwapStatsNow = (): Promise<SwapStatsReponse[]> =>
   fetch(`${swapStatsURI}/pools`, { cache: "no-cache" })

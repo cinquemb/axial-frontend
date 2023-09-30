@@ -13,12 +13,12 @@ export class ApiService {
     return ApiService.instance;
   }
 
-  public baseUrl = process.env.REACT_APP_BASE_URL;
+  public baseUrl = import.meta.env.VITE_BASE_URL;
   public token: string = "";
   public async fetchData(params: RequestParameters) {
     const url = params.isRawUrl ? params.url : this.baseUrl + params.url;
 
-    if (process.env.NODE_ENV !== "production") {
+    if (import.meta.env.NODE_ENV !== "production") {
       const uri = `${params.isRawUrl ? "" : this.baseUrl}${params.url}`;
       console.log(
         `🚀 %c${params.requestType} %crequest to: %c${uri}\n✉%c:`,
@@ -66,7 +66,7 @@ export class ApiService {
         toast.error("connection failed");
       }
     }
-    if (process.env.NODE_ENV !== "production") {
+    if (import.meta.env.NODE_ENV !== "production") {
       const uri = `${params.isRawUrl ? "" : this.baseUrl}${params.url}`;
       if (rawResponse.ok) {
         rawResponse

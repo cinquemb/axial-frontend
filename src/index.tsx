@@ -69,7 +69,7 @@ const ConnectedApp = ({ Component }: Props) => (
 const render = (Component: typeof App) => {
   ReactDOM.render(<ConnectedApp Component={Component} />, MOUNT_NODE);
 };
-
+/*
 if (module.hot) {
   // Hot reloadable translation json files and app
   // modules.hot.accept does not accept dynamic dependencies,
@@ -79,7 +79,7 @@ if (module.hot) {
     const App = require("./app").App;
     render(App);
   });
-}
+}*/
 
 render(App);
 

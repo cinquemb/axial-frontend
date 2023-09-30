@@ -30,7 +30,7 @@ export const initialState: ContainerState = {
     description: "",
     discussion: "",
     document: "",
-    votingPeriod: process.env.REACT_APP_MINIMUM_VOTING_PERIOD || "3",
+    votingPeriod: import.meta.env.VITE_MINIMUM_VOTING_PERIOD || "3",
     error: {
       title: "",
       description: "",

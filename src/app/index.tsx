@@ -109,7 +109,7 @@ export function App() {
       <Rewards pools={pools} />
       <Swap
         aggregatorABI={AGGREGATOR_ABI}
-        aggregatorAddress={process.env.REACT_APP_AGGREGATOR_ADDRESS || ""}
+        aggregatorAddress={import.meta.env.VITE_AGGREGATOR_ADDRESS || ""}
         tokens={tokens as { [K in TokenSymbols]: Token }}
       />
       <Layout>

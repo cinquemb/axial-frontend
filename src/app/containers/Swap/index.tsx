@@ -14,7 +14,7 @@ interface Props {
   aggregatorABI: any;
   tokens: { [K in TokenSymbols]: Token };
 }
-if (!process.env.REACT_APP_AGGREGATOR_ADDRESS) {
+if (!import.meta.env.VITE_AGGREGATOR_ADDRESS) {
   throw new Error("REACT_APP_AGGREGATOR_ADDRESS is not set");
 }
 

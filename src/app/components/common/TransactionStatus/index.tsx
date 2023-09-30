@@ -51,7 +51,7 @@ export const TransactionSuccess: FC = () => {
             <Anchor
               target="_blank"
               rel="noreferrer"
-              href={`${process.env.REACT_APP_EXPLORER_URL}/tx/${transactionSuccessId}`}
+              href={`${import.meta.env.VITE_EXPLORER_URL}/tx/${transactionSuccessId}`}
             >
               <Grid
                 container

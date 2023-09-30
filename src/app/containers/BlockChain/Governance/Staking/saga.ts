@@ -167,7 +167,7 @@ export function* stakeAccruingToken(action: {
     if (mainTokenContract) {
       const library = yield select(Web3Domains.selectNetworkLibraryDomain);
       const accruingTokenAddress =
-        process.env.REACT_APP_ACCRUING_TOKEN_ADDRESS || "";
+        import.meta.env.VITE_ACCRUING_TOKEN_ADDRESS || "";
       const accruingTokenContract: VeAxial = new Contract(
         accruingTokenAddress,
         AccruingTokenABI,

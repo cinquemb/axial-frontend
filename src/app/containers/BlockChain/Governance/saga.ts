@@ -156,7 +156,7 @@ export function* vote(action: {
 
 export function* saveToIPFS(data: any) {
   let metadataURI;
-  const url = process.env.REACT_APP_IPFS_API_URL;
+  const url = import.meta.env.VITE_IPFS_API_URL;
   try {
     const res = yield call(axios.request, {
       method: "POST",
@@ -536,7 +536,7 @@ export function* getGovernanceTokenContract() {
 export function* getAccruingTokenContract() {
   const library = yield select(Web3Domains.selectLibraryDomain);
   const accruingTokenAddress =
-    process.env.REACT_APP_ACCRUING_TOKEN_ADDRESS || "";
+    import.meta.env.VITE_ACCRUING_TOKEN_ADDRESS || "";
   const accruingTokenContract: VeAxial = new Contract(
     accruingTokenAddress,
     AccruingTokenABI,
